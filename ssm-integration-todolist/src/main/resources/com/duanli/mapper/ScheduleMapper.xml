@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--MyBatis配置文件-->
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.duanli.mapper.ScheduleMapper">
+
+    <select id="getAll" resultType="schedule">
+        select *
+        from schedule
+    </select>
+
+    <delete id="deleteById">
+        delete
+        from schedule
+        where id =
+              #{id}
+    </delete>
+
+    <insert id="add">
+        insert into schedule (title, completed)
+        values (#{title}, #{completed})
+    </insert>
+
+    <update id="update">
+        update schedule
+        set title=#{title},
+            completed=#{completed}
+        where id = #{id}
+    </update>
+
+</mapper>
